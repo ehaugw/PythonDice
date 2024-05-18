@@ -172,7 +172,7 @@ def gandalf(
 
 def str_list_of_dice(dice_list):
     return re.sub(r"[\[\]']", "", str([str(d) for d in dice_list]))
-    
+
 
 if __name__ == "__main__":
 
@@ -186,6 +186,8 @@ if __name__ == "__main__":
 
     #defender
     wisdom_save_bonus = 5
+
+    print("Sentinel is %s" % ("enabled" if sentinel else "disabled"))
 
     for level in (1, 2, 3, 5, 6, 7, 8, 9, 11):
         print("_")
@@ -243,7 +245,7 @@ if __name__ == "__main__":
                 strength=primary_stat,
                 wisdom=secondary_stat,
                 sentinel=sentinel,
-        
+
                 wisdom_save_bonus=wisdom_save_bonus
             )
             for r in range(1, max_rounds + 1)
